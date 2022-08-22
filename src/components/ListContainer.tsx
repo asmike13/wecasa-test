@@ -1,7 +1,7 @@
-import React from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchUniverse } from "src/redux/thunks/universeThunk"
-import List from "./List"
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchUniverse } from 'src/redux/thunks/universeThunk'
+import List from './List'
 import { IRootState } from 'src/store'
 
 const ListContainer = () => {
@@ -19,7 +19,7 @@ const ListContainer = () => {
 	React.useEffect(() => {
 		console.log('universeList', universeList)
 		console.log('status', status)
-	}, [universeList])
+	}, [universeList, status])
 
 	return <List />
 }

@@ -22,8 +22,8 @@ export const fetchUniverse = async ():
 	Promise<AxiosResponse<IUniverseList>> => {
 	const response = await axios.get('https://www.wecasa.fr/api/techtest/universe', {
 		headers: {
-			Accept: 'application/json'
-		}
+			Accept: 'application/json',
+		},
 	})
 	return response
 }
