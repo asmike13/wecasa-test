@@ -6,5 +6,5 @@ export const fetchUniverse = createAsyncThunk(
 	async () => {
 		const response = await API.fetchUniverse()
 		return response.data
-	}
+	},
 )

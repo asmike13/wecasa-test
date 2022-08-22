@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit"
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { universeSlice, IUniverseInitialState } from 'src/redux/slices/universeSlice'
 
 const reducer = combineReducers({
