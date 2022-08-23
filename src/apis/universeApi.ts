@@ -1,21 +1,22 @@
 import axios, { AxiosResponse } from 'axios';
 
-type TReference = 'man' | 'woman' | 'child'
-type TReferenceTitle = 'Homme' | 'Femme' | 'Enfant'
+export type ICategory = {
+	reference: string
+	title: string
+}
+export type IPrestation = {
+	reference: string
+	title: string
+	duration: number
+	price: number
+}
 
 export interface IUniverseList {
 	reference: string
 	title: string
-	categories: {
-		reference: TReference
-		title: TReferenceTitle
-		prestations: {
-			reference: string
-			title: string
-			duration: number
-			price: number
-		}[]
-	}[]
+	categories: (ICategory & {
+		prestations: IPrestation[]
+	})[]
 }
 
 export const fetchUniverse = async ():

@@ -1,0 +1,10 @@
+.list-container {
+	.prestation {
+		display: flex;
+		align-items: center;
+
+		&.hide {
+			display: none;
+		}
+	}
+}

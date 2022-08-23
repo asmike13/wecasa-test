@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit'
 import { IUniverseList } from 'src/apis/universeApi'
 import { fetchUniverse } from 'src/redux/thunks/universeThunk'
 
-export interface IUniverseInitialState {
+export interface IUniverseState {
 	list?: IUniverseList
 	status: 'idle' | 'fulfilled' | 'pending' | 'rejected'
 	error?: any
 }
 
-const initialState: IUniverseInitialState = {
+const initialState: IUniverseState = {
 	status: 'idle',
 }
 

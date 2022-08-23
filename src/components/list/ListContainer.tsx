@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchUniverse } from 'src/redux/thunks/universeThunk'
 import List from './List'
 import { IRootState } from 'src/store'
-import { IUniverseList } from 'src/apis/universeApi'
+import { ICategory, IPrestation, IUniverseList } from 'src/apis/universeApi'
+import { cartSlice } from 'src/redux/reducers/cartSlice'
 
 const ListContainer = () => {
 	const dispatch = useDispatch()
@@ -17,8 +18,21 @@ const ListContainer = () => {
 		dispatch(fetchUniverse() as any)
 	}, [dispatch])
 
+	const addToCart = ({ reference, title }: ICategory, prestation: IPrestation) => {
+		const payload = {
+			category: {
+				reference,
+				title,
+			},
+			prestation,
+		}
+
+		dispatch(cartSlice.actions.addItemToCart(payload))
+	}
+
 	const propsToPass = {
 		universeList: list as IUniverseList,
+		addToCart,
 	}
 
 	return /pending|idle/.test(status)
