@@ -18,7 +18,7 @@ const ListContainer = () => {
 		dispatch(fetchUniverse() as any)
 	}, [dispatch])
 
-	const addToCart = ({ reference, title }: ICategory, prestation: IPrestation) => {
+	const addToCart = React.useCallback(({ reference, title }: ICategory, prestation: IPrestation) => {
 		const item = {
 			category: {
 				reference,
@@ -28,16 +28,18 @@ const ListContainer = () => {
 		}
 
 		dispatch(cartSlice.actions.addItemToCart({ item }))
-	}
+	}, [dispatch])
 
-	const propsToPass = {
+	const propsToPass = React.useMemo(() => ({
 		universeList: list as IUniverseList,
 		addToCart,
-	}
+	}), [addToCart, list])
 
-	return /pending|idle/.test(status)
-		? <div>Loading ...</div>
-		: <List {...propsToPass} />
+	return React.useMemo(() => (
+		/pending|idle/.test(status)
+			? <div>Loading ...</div>
+			: <List {...propsToPass} />
+	), [propsToPass, status])
 }
 
 export default ListContainer

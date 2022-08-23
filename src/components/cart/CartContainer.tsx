@@ -12,25 +12,25 @@ const CartContainer = () => {
 	const [height, setHeight] = React.useState('0px')
 	const [showDetail, setShowDetail] = React.useState(false)
 
-	const totals = items.reduce((prev, curr) => ({
+	const totals = React.useMemo(() => items.reduce((prev, curr) => ({
 		totalTime: prev.totalTime + curr.prestation.duration * (curr.prestation.quantity || 0),
 		totalPrice: prev.totalPrice + curr.prestation.price * (curr.prestation.quantity || 0),
 	}), {
 		totalTime: 0,
 		totalPrice: 0,
-	})
+	}), [items])
 
 	const hasItems = items.length > 0
 
-	const onRemoveOne = (item: ICartItem) => {
+	const onRemoveOne = React.useCallback((item: ICartItem) => {
 		dispatch(cartSlice.actions.removeItemFromCart({ item }))
-	}
-	const onAddOne = (item: ICartItem) => {
+	}, [dispatch])
+	const onAddOne = React.useCallback((item: ICartItem) => {
 		dispatch(cartSlice.actions.addItemToCart({ item }))
-	}
-	const onRemoveAll = (item: ICartItem) => {
+	}, [dispatch])
+	const onRemoveAll = React.useCallback((item: ICartItem) => {
 		dispatch(cartSlice.actions.removeItemFromCart({ item, all: true }))
-	}
+	}, [dispatch])
 
 	React.useEffect(() => {
 		setHeight(`${document.querySelector('.cart')?.clientHeight || 0}px`)
@@ -40,26 +40,26 @@ const CartContainer = () => {
 		}
 	}, [items.length, showDetail, hasItems])
 
-	const props = {
+	const props = React.useMemo(() => ({
 		height,
 		showDetail,
 		setShowDetail,
-	}
+	}), [height, showDetail])
 
-	const cartResumeProps = {
+	const cartResumeProps = React.useMemo(() => ({
 		hasItems,
 		totalTime: totals.totalTime ? timeFormat(totals.totalTime) : '',
 		totalPrice: totals.totalPrice ? priceFormat(totals.totalPrice) : '',
-	}
+	}), [hasItems, totals])
 
-	const cartDetailProps = {
+	const cartDetailProps = React.useMemo(() => ({
 		items: items as ICartItem[],
 		onRemoveOne,
 		onAddOne,
 		onRemoveAll,
-	}
+	}), [items, onAddOne, onRemoveAll, onRemoveOne])
 
-	return <Cart {...props} cartResumeProps={cartResumeProps} cartDetailProps={cartDetailProps} />
+	return React.useMemo(() => <Cart {...props} cartResumeProps={cartResumeProps} cartDetailProps={cartDetailProps} />, [cartDetailProps, cartResumeProps, props])
 }
 
 export default CartContainer
