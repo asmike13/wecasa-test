@@ -16,7 +16,13 @@ const List = ({ universeList, addToCart }: IListProps) => {
 		<div className='list-container'>
 			<h1>{`Liste ${universeList.title}`}</h1>
 			{universeList.categories.map((category, index) => (
-				<button key={`${category.reference}-tab-btn`} onClick={() => setTab(index)}>{category.title}</button>
+				<button
+					key={`${category.reference}-tab-btn`}
+					className={index === tab ? 'selected-tab' : 'tab'}
+					onClick={() => setTab(index)}
+				>
+					{category.title}
+				</button>
 			))}
 			{universeList.categories.map((category, index) => (
 				category.prestations.map((prestation) => (

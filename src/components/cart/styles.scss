@@ -13,4 +13,19 @@
 
 .cart-detail {
 	margin-top: 15px;
+	padding-bottom: 15px;
+	max-height: 40vh;
+	overflow: auto;
+
+	.cart-detail-item {
+		margin-top: 15px;
+
+		.cart-detail-item-update {
+			margin-left: 100px;
+		}
+
+		button {
+			margin: 0 15px;
+		}
+	}
 }

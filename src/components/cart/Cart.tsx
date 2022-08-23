@@ -1,5 +1,5 @@
 import { ICartItem } from 'src/redux/reducers/cartSlice'
-import CartDetail from './CartDetail'
+import CartDetailContainer from './CartDetailContainer'
 
 import './styles.scss'
 
@@ -32,11 +32,11 @@ const Cart = ({
 							<li>{`Prix total : ${totalPrice}`}</li>
 							<li>{`Durée totale : ${totalTime}`}</li>
 						</ul>
-						<button onClick={() => setShowDetail(!showDetail)}>Détail</button>
+						<button onClick={() => setShowDetail(!showDetail)}>{showDetail ? 'Masquer détail' : 'Voir détail'}</button>
 					</>
 				}
 				{showDetail &&
-					<CartDetail items={items} />
+					<CartDetailContainer />
 				}
 			</div >
 		</>

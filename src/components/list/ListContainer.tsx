@@ -19,7 +19,7 @@ const ListContainer = () => {
 	}, [dispatch])
 
 	const addToCart = ({ reference, title }: ICategory, prestation: IPrestation) => {
-		const payload = {
+		const item = {
 			category: {
 				reference,
 				title,
@@ -27,7 +27,7 @@ const ListContainer = () => {
 			prestation,
 		}
 
-		dispatch(cartSlice.actions.addItemToCart(payload))
+		dispatch(cartSlice.actions.addItemToCart({ item }))
 	}
 
 	const propsToPass = {

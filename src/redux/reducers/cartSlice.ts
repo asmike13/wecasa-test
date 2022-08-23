@@ -28,13 +28,14 @@ export const cartSlice = createSlice({
 	name: 'cart',
 	initialState,
 	reducers: {
-		addItemToCart: (state: ICartState, action: { payload: ICartItem }) => {
-			const { prestation, category } = action.payload
+		addItemToCart: (state: ICartState, action: { payload: { item: ICartItem } }) => {
+			const { prestation, category } = action.payload.item
 			const searchKey = `${prestation.reference}/${category.reference}`
 			const existingItemIndex = state.items.map(({ key }) => key).indexOf(searchKey)
 
 			if (existingItemIndex >= 0) {
-				state.items[existingItemIndex].prestation.quantity = (state.items[existingItemIndex].prestation.quantity || 0) + 1
+				const quantity = state.items[existingItemIndex].prestation.quantity || 0
+				state.items[existingItemIndex].prestation.quantity = quantity + 1
 			} else {
 				state.items.push({
 					key: searchKey,
@@ -46,8 +47,17 @@ export const cartSlice = createSlice({
 				})
 			}
 		},
-		removeItemFromCart: () => {
+		removeItemFromCart: (state, action: { payload: { item: ICartItem, all?: boolean } }) => {
+			const { prestation, category } = action.payload.item
+			const searchKey = `${prestation.reference}/${category.reference}`
+			const existingItemIndex = state.items.map(({ key }) => key).indexOf(searchKey)
+			const quantity = state.items[existingItemIndex].prestation.quantity || 0
 
+			if (action.payload.all || quantity <= 1) {
+				state.items.splice(existingItemIndex, 1)
+			} else {
+				state.items[existingItemIndex].prestation.quantity = quantity - 1
+			}
 		},
 	},
 })
