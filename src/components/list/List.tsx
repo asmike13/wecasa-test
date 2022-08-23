@@ -4,7 +4,7 @@ import { priceFormat, timeFormat } from 'src/helpers/helpers'
 
 import './styles.scss'
 
-interface IListProps {
+export interface IListProps {
 	universeList: IUniverseList
 	addToCart: (category: ICategory, prestation: IPrestation) => void
 }

@@ -1,3 +1,4 @@
+import { fireEvent, render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import { StoreWrapper } from 'src/helpers/testHelpers';
 import { itemMock } from 'src/mocks/itemsMock';
@@ -28,4 +29,22 @@ it('should render CartDetail as snapshot with items', async () => {
 	)
 
 	expect(snapshot).toMatchSnapshot()
+})
+
+
+it('should call correct actions on clicks', async () => {
+	render(
+		<StoreWrapper>
+			<CartDetail {...props} />
+		</StoreWrapper>,
+	)
+
+	fireEvent.click(screen.getAllByText('+1')[0])
+	expect(props.onAddOne).toHaveBeenCalledTimes(1)
+
+	fireEvent.click(screen.getAllByText('-1')[0])
+	expect(props.onRemoveOne).toHaveBeenCalledTimes(1)
+
+	fireEvent.click(screen.getAllByText('Remove')[0])
+	expect(props.onRemoveAll).toHaveBeenCalledTimes(1)
 })

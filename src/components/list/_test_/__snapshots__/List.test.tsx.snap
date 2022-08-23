@@ -1,0 +1,509 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render List as snapshot with universeMock 1`] = `
+<div
+  className="list-container"
+>
+  <h2>
+    Liste Coiffure
+  </h2>
+  <button
+    className="selected-tab"
+    onClick={[Function]}
+  >
+    Homme
+  </button>
+  <button
+    className="tab"
+    onClick={[Function]}
+  >
+    Femme
+  </button>
+  <button
+    className="tab"
+    onClick={[Function]}
+  >
+    Enfant
+  </button>
+  <div
+    className="prestation "
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Shampoing
+      </li>
+      <li>
+         10min
+      </li>
+      <li>
+        4€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation "
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Coupe homme
+      </li>
+      <li>
+         30min
+      </li>
+      <li>
+        29.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation "
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Couleur
+      </li>
+      <li>
+         45min
+      </li>
+      <li>
+        60.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation "
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Taille de la barbe
+      </li>
+      <li>
+         15min
+      </li>
+      <li>
+        20€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Shampoing
+      </li>
+      <li>
+         10min
+      </li>
+      <li>
+        4€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Soin profond
+      </li>
+      <li>
+         10min
+      </li>
+      <li>
+        10€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Coupe cheveux courts et mi-longs
+      </li>
+      <li>
+         30min
+      </li>
+      <li>
+        32.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Coupe cheveux longs
+      </li>
+      <li>
+         45min
+      </li>
+      <li>
+        42.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Brushing (courts et mi-longs)
+      </li>
+      <li>
+         20min
+      </li>
+      <li>
+        32.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Brushing (longs)
+      </li>
+      <li>
+         40min
+      </li>
+      <li>
+        42.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Couleur (racines)
+      </li>
+      <li>
+         45min
+      </li>
+      <li>
+        60.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Couleur complète
+      </li>
+      <li>
+        1H 15min
+      </li>
+      <li>
+        80.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Ombré hair
+      </li>
+      <li>
+        1H 30min
+      </li>
+      <li>
+        90.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Mèches
+      </li>
+      <li>
+        2H
+      </li>
+      <li>
+        80.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Balayage
+      </li>
+      <li>
+        2H
+      </li>
+      <li>
+        80.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Permanente
+      </li>
+      <li>
+        2H
+      </li>
+      <li>
+        80.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Patine
+      </li>
+      <li>
+         15min
+      </li>
+      <li>
+        19.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Brushing élaboré
+      </li>
+      <li>
+         40min
+      </li>
+      <li>
+        42.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Coiffure de soirée (chignon, tresses, attaches…) 
+      </li>
+      <li>
+         45min
+      </li>
+      <li>
+        59.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Coiffure de mariée
+      </li>
+      <li>
+        1H 30min
+      </li>
+      <li>
+        99€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Coiffure de mariage avec essai
+      </li>
+      <li>
+        1H 30min
+      </li>
+      <li>
+        219€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Lissage brésilien
+      </li>
+      <li>
+        3H
+      </li>
+      <li>
+        219€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Coupe enfant
+      </li>
+      <li>
+         20min
+      </li>
+      <li>
+        17.90€
+      </li>
+    </ul>
+  </div>
+  <div
+    className="prestation hide"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
+    <ul>
+      <li>
+        Coiffure enfant (chignon, tresse, attache...) 
+      </li>
+      <li>
+         30min
+      </li>
+      <li>
+        39.90€
+      </li>
+    </ul>
+  </div>
+</div>
+`;
