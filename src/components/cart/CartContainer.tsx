@@ -11,19 +11,15 @@ const CartContainer = () => {
 	const [showDetail, setShowDetail] = React.useState(false)
 
 	const totals = items.reduce((prev, curr) => ({
-		totalTime: prev.totalTime + curr.prestation.duration,
-		totalPrice: prev.totalPrice + curr.prestation.price,
+		totalTime: prev.totalTime + curr.prestation.duration * (curr.prestation.quantity || 0),
+		totalPrice: prev.totalPrice + curr.prestation.price * (curr.prestation.quantity || 0),
 	}), {
 		totalTime: 0,
 		totalPrice: 0,
 	})
 
 	React.useEffect(() => {
-		const heightToSet = showDetail
-			? '50vh'
-			: `${document.querySelector('.cart')?.clientHeight || 0}px`
-
-		setHeight(heightToSet)
+		setHeight(`${document.querySelector('.cart')?.clientHeight || 0}px`)
 	}, [items.length, showDetail])
 
 	const propsToPass = {

@@ -11,7 +11,7 @@ interface IListProps {
 
 const List = ({ universeList, addToCart }: IListProps) => {
 	const [tab, setTab] = React.useState(0)
-	console.log('render List')
+
 	return (
 		<div className='list-container'>
 			<h1>{`Liste ${universeList.title}`}</h1>

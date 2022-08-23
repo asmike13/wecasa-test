@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export interface ICartItem {
+	key?: string
 	prestation: {
 		reference: string
 		title: string
 		duration: number
 		price: number
+		quantity?: number
 	}
 	category: {
 		reference: string
@@ -27,7 +29,22 @@ export const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		addItemToCart: (state: ICartState, action: { payload: ICartItem }) => {
-			state.items.push(action.payload)
+			const { prestation, category } = action.payload
+			const searchKey = `${prestation.reference}/${category.reference}`
+			const existingItemIndex = state.items.map(({ key }) => key).indexOf(searchKey)
+
+			if (existingItemIndex >= 0) {
+				state.items[existingItemIndex].prestation.quantity = (state.items[existingItemIndex].prestation.quantity || 0) + 1
+			} else {
+				state.items.push({
+					key: searchKey,
+					category,
+					prestation: {
+						...prestation,
+						quantity: 1,
+					},
+				})
+			}
 		},
 		removeItemFromCart: () => {
 

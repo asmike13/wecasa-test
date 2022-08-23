@@ -1,4 +1,5 @@
 import { ICartItem } from 'src/redux/reducers/cartSlice'
+import CartDetail from './CartDetail'
 
 import './styles.scss'
 
@@ -12,7 +13,7 @@ interface ICartProps {
 }
 
 const Cart = ({
-	items, // display details
+	items,
 	totalTime,
 	totalPrice,
 	height,
@@ -22,7 +23,7 @@ const Cart = ({
 	return (
 		<>
 			<div className='cart-margin' style={{ height }} />
-			<div className='cart' style={{ height: showDetail ? '50vh' : 'auto' }}>
+			<div className='cart'>
 				{items.length === 0
 					? 'Panier vide'
 					: <>
@@ -33,6 +34,9 @@ const Cart = ({
 						</ul>
 						<button onClick={() => setShowDetail(!showDetail)}>Détail</button>
 					</>
+				}
+				{showDetail &&
+					<CartDetail items={items} />
 				}
 			</div >
 		</>
