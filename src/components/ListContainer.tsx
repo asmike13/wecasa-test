@@ -17,15 +17,9 @@ const ListContainer = () => {
 		dispatch(fetchUniverse() as any)
 	}, [dispatch])
 
-	React.useEffect(() => {
-		console.log('universeList', list)
-		console.log('status', status)
-	}, [list, status])
-
 	const propsToPass = {
 		universeList: list as IUniverseList,
 	}
-
 
 	return /pending|idle/.test(status)
 		? <div>Loading ...</div>
