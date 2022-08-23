@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render app as snapshot 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    Wecasa Test
+  </h1>
+  <div>
+    Loading ...
+  </div>
+  <div
+    className="cart-margin"
+    style={
+      Object {
+        "height": "0px",
+      }
+    }
+  />
+  <div
+    className="cart"
+  >
+    Panier vide
+  </div>
+</div>
+`;

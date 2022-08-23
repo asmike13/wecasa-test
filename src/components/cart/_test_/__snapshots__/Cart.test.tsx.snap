@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Cart as snapshot with detail 1`] = `
+Array [
+  <div
+    className="cart-margin"
+    style={
+      Object {
+        "height": "10px",
+      }
+    }
+  />,
+  <div
+    className="cart"
+  >
+    Panier vide
+  </div>,
+]
+`;
+
+exports[`should render Cart as snapshot without detail 1`] = `
+Array [
+  <div
+    className="cart-margin"
+    style={
+      Object {
+        "height": "10px",
+      }
+    }
+  />,
+  <div
+    className="cart"
+  >
+    Panier vide
+  </div>,
+]
+`;
+
+exports[`should render CartDetail as snapshot with items 1`] = `
+<div
+  className="cart-detail"
+>
+  <div
+    className="cart-detail-item"
+  >
+    <span>
+      pTitle cTitle
+    </span>
+    <div
+      className="cart-detail-item-update"
+    >
+      <button
+        onClick={[Function]}
+      >
+        -1
+      </button>
+      x 10
+      <button
+        onClick={[Function]}
+      >
+        +1
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+  <div
+    className="cart-detail-item"
+  >
+    <span>
+      pTitle2 cTitle2
+    </span>
+    <div
+      className="cart-detail-item-update"
+    >
+      <button
+        onClick={[Function]}
+      >
+        -1
+      </button>
+      x 3
+      <button
+        onClick={[Function]}
+      >
+        +1
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render CartDetail as snapshot without items 1`] = `
+<div
+  className="cart-detail"
+/>
+`;
+
+exports[`should render CartResume as snapshot with items 1`] = `
+Array [
+  <span>
+    Panier :
+  </span>,
+  <ul>
+    <li>
+      Prix total : 100€
+    </li>
+    <li>
+      Durée totale : 1H 4min
+    </li>
+  </ul>,
+]
+`;
+
+exports[`should render CartResume as snapshot without items 1`] = `"Panier vide"`;

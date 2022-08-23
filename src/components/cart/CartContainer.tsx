@@ -1,11 +1,13 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { priceFormat, timeFormat } from 'src/helpers'
-import { ICartItem } from 'src/redux/reducers/cartSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { priceFormat, timeFormat } from 'src/helpers/helpers'
+import { cartSlice, ICartItem } from 'src/redux/reducers/cartSlice'
 import { IRootState } from 'src/store'
 import Cart from './Cart'
 
 const CartContainer = () => {
+	const dispatch = useDispatch()
+
 	const { items } = useSelector((store: IRootState) => store.cart)
 	const [height, setHeight] = React.useState('0px')
 	const [showDetail, setShowDetail] = React.useState(false)
@@ -18,20 +20,46 @@ const CartContainer = () => {
 		totalPrice: 0,
 	})
 
+	const hasItems = items.length > 0
+
+	const onRemoveOne = (item: ICartItem) => {
+		dispatch(cartSlice.actions.removeItemFromCart({ item }))
+	}
+	const onAddOne = (item: ICartItem) => {
+		dispatch(cartSlice.actions.addItemToCart({ item }))
+	}
+	const onRemoveAll = (item: ICartItem) => {
+		dispatch(cartSlice.actions.removeItemFromCart({ item, all: true }))
+	}
+
 	React.useEffect(() => {
 		setHeight(`${document.querySelector('.cart')?.clientHeight || 0}px`)
-	}, [items.length, showDetail])
 
-	const propsToPass = {
-		items: items as ICartItem[],
-		totalTime: totals.totalTime ? timeFormat(totals.totalTime) : '',
-		totalPrice: totals.totalPrice ? priceFormat(totals.totalPrice) : '',
+		if (!hasItems) {
+			setShowDetail(false)
+		}
+	}, [items.length, showDetail, hasItems])
+
+	const props = {
 		height,
 		showDetail,
 		setShowDetail,
 	}
 
-	return <Cart {...propsToPass} />
+	const cartResumeProps = {
+		hasItems,
+		totalTime: totals.totalTime ? timeFormat(totals.totalTime) : '',
+		totalPrice: totals.totalPrice ? priceFormat(totals.totalPrice) : '',
+	}
+
+	const cartDetailProps = {
+		items: items as ICartItem[],
+		onRemoveOne,
+		onAddOne,
+		onRemoveAll,
+	}
+
+	return <Cart {...props} cartResumeProps={cartResumeProps} cartDetailProps={cartDetailProps} />
 }
 
 export default CartContainer

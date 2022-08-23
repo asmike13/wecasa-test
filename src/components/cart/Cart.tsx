@@ -1,44 +1,35 @@
-import { ICartItem } from 'src/redux/reducers/cartSlice'
-import CartDetailContainer from './CartDetailContainer'
-
+import ActionButton from '../buttons/ActionButton'
+import CartDetail, { ICartDetailProps } from './CartDetail'
+import CartResume, { ICartResumeProps } from './CartResume'
 import './styles.scss'
 
-interface ICartProps {
-	items: ICartItem[]
-	totalTime: string
-	totalPrice: string
+export type TCartProps = {
+	cartResumeProps: ICartResumeProps
+	cartDetailProps: ICartDetailProps
 	height: string
 	showDetail: boolean
 	setShowDetail: (show: boolean) => void
 }
 
 const Cart = ({
-	items,
-	totalTime,
-	totalPrice,
+	cartResumeProps,
+	cartDetailProps,
 	height,
 	showDetail,
 	setShowDetail,
-}: ICartProps) => {
+}: TCartProps) => {
 	return (
 		<>
 			<div className='cart-margin' style={{ height }} />
 			<div className='cart'>
-				{items.length === 0
-					? 'Panier vide'
-					: <>
-						<span>Panier :</span>
-						<ul>
-							<li>{`Prix total : ${totalPrice}`}</li>
-							<li>{`Durée totale : ${totalTime}`}</li>
-						</ul>
-						<button onClick={() => setShowDetail(!showDetail)}>{showDetail ? 'Masquer détail' : 'Voir détail'}</button>
-					</>
+				<CartResume {...cartResumeProps} />
+				{cartResumeProps.hasItems &&
+					<ActionButton setAction={() => setShowDetail(!showDetail)} value={showDetail ? 'Masquer détail' : 'Voir détail'} />
 				}
-				{showDetail &&
-					<CartDetailContainer />
+				{cartResumeProps.hasItems && showDetail &&
+					<CartDetail {...cartDetailProps} />
 				}
-			</div >
+			</div>
 		</>
 	)
 }

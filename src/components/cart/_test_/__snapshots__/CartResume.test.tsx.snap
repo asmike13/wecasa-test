@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CartResume as snapshot with items 1`] = `
+Array [
+  <span>
+    Panier :
+  </span>,
+  <ul>
+    <li>
+      Prix total : 100€
+    </li>
+    <li>
+      Durée totale : 1H 4min
+    </li>
+  </ul>,
+]
+`;
+
+exports[`should render CartResume as snapshot without items 1`] = `"Panier vide"`;

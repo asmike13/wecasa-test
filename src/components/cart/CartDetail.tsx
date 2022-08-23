@@ -1,6 +1,6 @@
 import { ICartItem } from 'src/redux/reducers/cartSlice'
 
-interface ICartDetailProps {
+export interface ICartDetailProps {
 	items: ICartItem[]
 	onRemoveOne: (item: ICartItem) => void
 	onAddOne: (item: ICartItem) => void

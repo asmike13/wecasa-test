@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CartDetail as snapshot with items 1`] = `
+<div
+  className="cart-detail"
+>
+  <div
+    className="cart-detail-item"
+  >
+    <span>
+      pTitle cTitle
+    </span>
+    <div
+      className="cart-detail-item-update"
+    >
+      <button
+        onClick={[Function]}
+      >
+        -1
+      </button>
+      x 10
+      <button
+        onClick={[Function]}
+      >
+        +1
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+  <div
+    className="cart-detail-item"
+  >
+    <span>
+      pTitle2 cTitle2
+    </span>
+    <div
+      className="cart-detail-item-update"
+    >
+      <button
+        onClick={[Function]}
+      >
+        -1
+      </button>
+      x 3
+      <button
+        onClick={[Function]}
+      >
+        +1
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render CartDetail as snapshot without items 1`] = `
+<div
+  className="cart-detail"
+/>
+`;

@@ -7,6 +7,7 @@ import ListContainer from './components/list/ListContainer';
 function App() {
 	return (
 		<div className="App">
+			<h1>Wecasa Test</h1>
 			<Provider store={store}>
 				<ListContainer />
 				<CartContainer />

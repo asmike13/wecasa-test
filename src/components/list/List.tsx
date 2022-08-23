@@ -1,6 +1,6 @@
 import React from 'react'
 import { ICategory, IPrestation, IUniverseList } from 'src/apis/universeApi'
-import { priceFormat, timeFormat } from 'src/helpers'
+import { priceFormat, timeFormat } from 'src/helpers/helpers'
 
 import './styles.scss'
 
@@ -14,7 +14,7 @@ const List = ({ universeList, addToCart }: IListProps) => {
 
 	return (
 		<div className='list-container'>
-			<h1>{`Liste ${universeList.title}`}</h1>
+			<h2>{`Liste ${universeList.title}`}</h2>
 			{universeList.categories.map((category, index) => (
 				<button
 					key={`${category.reference}-tab-btn`}
